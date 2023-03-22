@@ -25,39 +25,53 @@ double rastring(vector<double> x, int dim) {
     return 10 * dim + sum;
 }
 
-double schwefel(double x, int dim) {
+double schwefel(vector<double> x, int dim) {
     double sum = 0.0;
     for(int i = 1; i <= dim; i++) {
-        sum += -x * sin(sqrt(fabs(x)));
+        sum += -x[i-1] * sin(sqrt(fabs(x[i-1])));
     }
 
     return -sum;
+}
+
+
+
+vector<double> findGlobalOptimum(vector<vector<double>> cockroaches, double (*testFunction)(vector<double>, int)) {
+    vector<double> globalOptimum;
+    int dim = cockroaches[0].size();
+    globalOptimum = cockroaches[0];
+
+    for(int i = 1; i < cockroaches.size(); i++) {
+        if(testFunction(cockroaches[i], dim) < testFunction(globalOptimum, dim)) {
+            globalOptimum = cockroaches[i];
+        }
+    }
+
+    return globalOptimum;
 }
 
 vector<double> updatePosition() {
 
 }
 
-vector<double> findGlobalBest(vector<double> cockroaches, int dim, double (*func)(double)) {
-    vector<double> globalBest;
-    globalBest[0] = cockroaches[0];
-    for(int i = 1; i < dim; i++) {
-        if(func(cockroaches[i]) < func(globalBest[0])) {
-            globalBest[0] = cockroaches[i];
-        }
-    }
+vector<double> cockroachAlgorithm() {
 
-    return globalBest;
-}
 
-vector<double> cockroachAlgorithm(int numCockroaches, int maxIter, double eps, double lowerBound, double upperBound) {
-    vector<double> cockroachesPosition(numCockroaches);
 }
 
 
 
 int main()
 {
+
+    const int NUM_OF_CROCKROACHES = 500;
+    const int MAX_ITER = 1000;
+    const double EPS = 0.001;
+    const double VISIBILITY = 0.5;
+    const double W = 0.1;
+
+
+
 
 
 
