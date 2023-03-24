@@ -187,20 +187,20 @@ vector<double> cockroachAlgorithm(int numCockroach, int dim, int maxIter, double
 int main()
 {
 
-    const int NUM_OF_CROCKROACHES = 250;
-    const int MAX_ITER = 300;
+    const int NUM_OF_CROCKROACHES = 260;
+    const int MAX_ITER = 200;
     const double EPS = 0.001;
-    const double VISUAL = 0.2;
+    const double VISUAL = 0.1;
     const int DIM = 2;
     const double W = 0.1;
     const double LOWER_BOUND = -500;
     const double UPPER_BOUND = 500;
 
-    vector<double> solution = cockroachAlgorithm(NUM_OF_CROCKROACHES, DIM, MAX_ITER, LOWER_BOUND, UPPER_BOUND, VISUAL, EPS, W, &rastring);
+    vector<double> solution = cockroachAlgorithm(NUM_OF_CROCKROACHES, DIM, MAX_ITER, LOWER_BOUND, UPPER_BOUND, VISUAL, EPS, W, &schwefel);
 
 
     cout << "Znaleziono rozwiazanie: " << endl;
-    cout << "F(x) = " << rastring(solution, DIM) << " dla x { ";
+    cout << "F(x) = " << schwefel(solution, DIM) << " dla x { ";
     for(auto x : solution) {
         cout << x << " ";
     }
