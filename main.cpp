@@ -198,6 +198,8 @@ int main()
     vector<double> solution = cockroachAlgorithm(NUM_OF_CROCKROACHES, DIM, MAX_ITER, LOWER_BOUND, UPPER_BOUND, VISUAL, EPS, W, &schwefel);
 
     cout << "test";
+
+    cout << "Jakiś tekst";
     cout << "Znaleziono rozwiazanie: " << endl;
     cout << "F(x) = " << schwefel(solution, DIM) << " dla x { ";
     for(auto x : solution) {
