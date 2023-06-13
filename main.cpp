@@ -198,6 +198,7 @@ int main()
     vector<double> solution = cockroachAlgorithm(NUM_OF_CROCKROACHES, DIM, MAX_ITER, LOWER_BOUND, UPPER_BOUND, VISUAL, EPS, W, &schwefel);
 
     cout << "test";
+    cout << "Po mergu z developem";
 
     cout << "Jakiś tekst";
     cout << "Znaleziono rozwiazanie: " << endl;
